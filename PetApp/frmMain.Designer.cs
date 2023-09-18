@@ -127,21 +127,21 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // mascotasToolStripMenuItem
             // 
             this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
-            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.mascotasToolStripMenuItem.Text = "Mascotas";
             this.mascotasToolStripMenuItem.Click += new System.EventHandler(this.mascotasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -158,6 +158,7 @@
             this.proximaVacunacionToolStripMenuItem.Name = "proximaVacunacionToolStripMenuItem";
             this.proximaVacunacionToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.proximaVacunacionToolStripMenuItem.Text = "Proxima vacunacion";
+            this.proximaVacunacionToolStripMenuItem.Click += new System.EventHandler(this.proximaVacunacionToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PetApp
@@ -21,70 +16,51 @@ namespace PetApp
         {
             // TODO: This line of code loads data into the 'petAppMascota.Mascota' table. You can move, or remove it, as needed.
             this.mascotaTableAdapter.Fill(this.petAppMascota.Mascota);
-
+            // TODO: This line of code loads data into the 'petAppMascota.Mascota' table. You can move, or remove it, as needed.
+            this.mascotaTableAdapter.Fill(this.petAppMascota.Mascota);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Obtén el valor seleccionado en el ComboBox cmbReporte
-            string reporteSeleccionado = cmbReporte.SelectedItem.ToString();
-
-            // Realiza la consulta en función del reporte seleccionado
-            switch (reporteSeleccionado)
+            if (cmbReporte.SelectedIndex >= 0)
             {
-                case "Reporte 1": // NombreCompleto, Telefono, Email
-                    using (var db = new PetAppContext())
+                // Obtener el alias seleccionado
+                string aliasSeleccionado = cmbReporte.SelectedItem.ToString();
+
+                // Mostrar el alias seleccionado en un MessageBox (esto es para depuración)
+                MessageBox.Show("Alias seleccionado: " + aliasSeleccionado);
+
+                // Aquí debes buscar en tu base de datos el IdMascota correspondiente al alias seleccionado
+                // y luego buscar la fecha próxima en la tabla Vacunas
+                using (var db = new PetAppContext())
+                {
+                    // Supongamos que tienes una entidad Mascota con un campo Alias
+
+                    var mascota = db.Mascota.FirstOrDefault(m => m.Alias == aliasSeleccionado);
+
+                    if (mascota != null)
                     {
-                        var resultados = db.Cliente.Select(c => new
-                        {
-                            c.NombreCompleto,
-                            c.Telefono,
-                            c.Email
-                        }).ToList();
+                        // Ahora que tienes el IdMascota, puedes buscar la fecha próxima en Vacunas
+                        var fechaProxima = db.Vacunas
+                                .Where(v => v.IdMascota == mascota.IdMascota)
+                                .OrderByDescending(v => v.FechaProxima)
+                                .Select(v => v.FechaProxima)
+                                .FirstOrDefault();
 
-                        Data.DataSource = resultados;
+                        // Mostrar la fecha próxima en el TextBox txtVacuna
+                        txtVacuna.Text = fechaProxima?.ToString("yyyy-MM-dd") ?? "No disponible";
                     }
-                    break;
-
-                case "Reporte 2": // Alias, Peso
-                    using (var db = new PetAppContext())
+                    else
                     {
-                        var resultados = db.Mascota.Join(
-                            db.Pesos,
-                            mascota => mascota.IdMascota,
-                            peso => peso.IdMascota,
-                            (mascota, peso) => new
-                            {
-                                mascota.Alias,
-                                peso.Peso
-                            }).ToList();
-
-                        Data.DataSource = resultados;
+                        txtVacuna.Text = "No se encontró la mascota.";
                     }
-                    break;
-
-                case "Reporte 3": // Alias, Enfermedad, FechaProxima
-                    using (var db = new PetAppContext())
-                    {
-                        var resultados = db.Mascota.Join(
-                            db.Vacunas,
-                            mascota => mascota.IdMascota,
-                            vacuna => vacuna.IdMascota,
-                            (mascota, vacuna) => new
-                            {
-                                mascota.Alias,
-                                vacuna.Enfermedad,
-                                vacuna.FechaProxima
-                            }).ToList();
-
-                        Data.DataSource = resultados;
-                    }
-                    break;
-
-                default:
-                    // Reporte no reconocido, puedes manejarlo según tus necesidades.
-                    break;
+                }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

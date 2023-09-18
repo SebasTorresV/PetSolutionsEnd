@@ -91,7 +91,7 @@ namespace PetApp
         private void mascotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var frmManteniminetoMascota = new frmManteniminetoMascota();
+            var frmManteniminetoMascota = new frmMantenimientoMascota();
             frmManteniminetoMascota.MdiParent = this;
             frmManteniminetoMascota.Show();
 
@@ -102,6 +102,15 @@ namespace PetApp
             var frmManteniminetoCliente = new frmMantenimientoCliente();
             frmManteniminetoCliente.MdiParent = this;
             frmManteniminetoCliente.Show();
+        }
+
+        private void proximaVacunacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var frmReporte = new frmReporte();
+            frmReporte.MdiParent = this;
+            frmReporte.Show();
+
         }
     }
 }

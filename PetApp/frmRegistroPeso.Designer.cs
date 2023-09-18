@@ -73,6 +73,7 @@
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(215, 20);
             this.txtPeso.TabIndex = 14;
+            this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -80,9 +81,9 @@
             this.label3.Location = new System.Drawing.Point(9, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Peso";
+            this.label3.Text = "Peso (Kg)";
             // 
             // dtpFecha
             // 
