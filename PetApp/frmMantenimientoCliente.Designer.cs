@@ -67,7 +67,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(151, 174);
+            this.btnActualizar.Location = new System.Drawing.Point(286, 68);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.grpEdit.Controls.Add(this.btnActualizar);
             this.grpEdit.Location = new System.Drawing.Point(2, 207);
             this.grpEdit.Name = "grpEdit";
-            this.grpEdit.Size = new System.Drawing.Size(415, 203);
+            this.grpEdit.Size = new System.Drawing.Size(415, 129);
             this.grpEdit.TabIndex = 5;
             this.grpEdit.TabStop = false;
             this.grpEdit.Text = "Edicion";
@@ -123,18 +123,19 @@
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // frmManteniminetoCliente
+            // frmMantenimientoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 450);
+            this.ClientSize = new System.Drawing.Size(420, 338);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.grpEdit);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmManteniminetoCliente";
-            this.Text = "frmManteniminetoCliente";
+            this.Name = "frmMantenimientoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mantenimineto de Cliente";
             this.Load += new System.EventHandler(this.frmManteniminetoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.groupBox1.ResumeLayout(false);

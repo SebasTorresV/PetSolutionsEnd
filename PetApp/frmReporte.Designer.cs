@@ -80,7 +80,7 @@
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(321, 144);
+            this.Data.Size = new System.Drawing.Size(321, 138);
             this.Data.TabIndex = 7;
             this.Data.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Data_MouseDoubleClick);
             // 
@@ -95,9 +95,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 409);
+            this.ClientSize = new System.Drawing.Size(477, 295);
             this.Controls.Add(this.gpbReporte);
             this.Name = "frmReporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.frmReporte_Load);
             this.gpbReporte.ResumeLayout(false);

@@ -59,7 +59,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(123, 257);
+            this.btnCancelar.Location = new System.Drawing.Point(137, 257);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(63, 24);
@@ -70,7 +70,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(25, 257);
+            this.btnGuardar.Location = new System.Drawing.Point(34, 257);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 24);
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 450);
+            this.ClientSize = new System.Drawing.Size(258, 301);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtEnfermedad);
             this.Controls.Add(this.btnCancelar);

@@ -46,7 +46,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(132, 259);
+            this.btnCancelar.Location = new System.Drawing.Point(124, 217);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 25);
@@ -57,7 +57,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(31, 259);
+            this.btnGuardar.Location = new System.Drawing.Point(23, 217);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(69, 25);
@@ -68,17 +68,17 @@
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(11, 217);
+            this.txtPeso.Location = new System.Drawing.Point(39, 170);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(2);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(215, 20);
+            this.txtPeso.Size = new System.Drawing.Size(140, 20);
             this.txtPeso.TabIndex = 14;
             this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 193);
+            this.label3.Location = new System.Drawing.Point(36, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -88,16 +88,16 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(11, 158);
+            this.dtpFecha.Location = new System.Drawing.Point(39, 115);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(215, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(140, 20);
             this.dtpFecha.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 132);
+            this.label2.Location = new System.Drawing.Point(36, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
@@ -121,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 73);
+            this.label1.Location = new System.Drawing.Point(36, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
@@ -133,7 +133,7 @@
             this.cmbPeso.DataSource = this.mascotaBindingSource;
             this.cmbPeso.DisplayMember = "IdMascota";
             this.cmbPeso.FormattingEnabled = true;
-            this.cmbPeso.Location = new System.Drawing.Point(11, 89);
+            this.cmbPeso.Location = new System.Drawing.Point(38, 48);
             this.cmbPeso.Name = "cmbPeso";
             this.cmbPeso.Size = new System.Drawing.Size(141, 21);
             this.cmbPeso.TabIndex = 17;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(235, 301);
+            this.ClientSize = new System.Drawing.Size(221, 255);
             this.Controls.Add(this.cmbPeso);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -154,7 +154,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmRegistroPeso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRegistroPeso";
+            this.Text = "Registro de Peso";
             this.Load += new System.EventHandler(this.frmRegistroPeso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.petAppMascota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();

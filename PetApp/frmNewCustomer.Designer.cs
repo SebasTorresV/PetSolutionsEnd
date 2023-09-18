@@ -41,8 +41,8 @@
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mascotaTableAdapter = new PetApp.PetAppMascotaTableAdapters.MascotaTableAdapter();
             this.grb1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbMascota = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.petAppMascota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
             this.grb1.SuspendLayout();
@@ -145,15 +145,6 @@
             this.grb1.TabStop = false;
             this.grb1.Text = "Datos de la Mascota";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mascota";
-            // 
             // cmbMascota
             // 
             this.cmbMascota.DataSource = this.mascotaBindingSource;
@@ -164,6 +155,15 @@
             this.cmbMascota.Size = new System.Drawing.Size(121, 21);
             this.cmbMascota.TabIndex = 1;
             this.cmbMascota.ValueMember = "Alias";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mascota";
             // 
             // frmNewCustomer
             // 
@@ -180,6 +180,7 @@
             this.Controls.Add(this.txtEnfermedad);
             this.Controls.Add(this.label2);
             this.Name = "frmNewCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registros de Vacunas";
             this.Load += new System.EventHandler(this.frmNewCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.petAppMascota)).EndInit();
