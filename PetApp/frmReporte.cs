@@ -2,65 +2,93 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+
 
 namespace PetApp
 {
     public partial class frmReporte : Form
     {
+
+        string Datos;
+
         public frmReporte()
         {
             InitializeComponent();
         }
 
-        private void frmReporte_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'petAppMascota.Mascota' table. You can move, or remove it, as needed.
-            this.mascotaTableAdapter.Fill(this.petAppMascota.Mascota);
-            // TODO: This line of code loads data into the 'petAppMascota.Mascota' table. You can move, or remove it, as needed.
-            this.mascotaTableAdapter.Fill(this.petAppMascota.Mascota);
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cmbReporte.SelectedIndex >= 0)
+            if (Data.SelectedRows.Count > 0)
             {
-                // Obtener el alias seleccionado
-                string aliasSeleccionado = cmbReporte.SelectedItem.ToString();
+                // Obtén el IdMascota seleccionado en el DataGridView
+                int idMascotaSeleccionado = (int)Data.SelectedRows[0].Cells["IdMascota"].Value;
 
-                // Mostrar el alias seleccionado en un MessageBox (esto es para depuración)
-                MessageBox.Show("Alias seleccionado: " + aliasSeleccionado);
-
-                // Aquí debes buscar en tu base de datos el IdMascota correspondiente al alias seleccionado
-                // y luego buscar la fecha próxima en la tabla Vacunas
+                // Realiza la búsqueda en la tabla Vacunas usando el IdMascota
                 using (var db = new PetAppContext())
                 {
-                    // Supongamos que tienes una entidad Mascota con un campo Alias
+                    var fechaProxima = db.Vacunas
+                        .Where(v => v.IdMascota == idMascotaSeleccionado)
+                        .OrderByDescending(v => v.FechaProxima)
+                        .Select(v => v.FechaProxima)
+                        .FirstOrDefault();
 
-                    var mascota = db.Mascota.FirstOrDefault(m => m.Alias == aliasSeleccionado);
-
-                    if (mascota != null)
+                    if (fechaProxima != null)
                     {
-                        // Ahora que tienes el IdMascota, puedes buscar la fecha próxima en Vacunas
-                        var fechaProxima = db.Vacunas
-                                .Where(v => v.IdMascota == mascota.IdMascota)
-                                .OrderByDescending(v => v.FechaProxima)
-                                .Select(v => v.FechaProxima)
-                                .FirstOrDefault();
-
-                        // Mostrar la fecha próxima en el TextBox txtVacuna
-                        txtVacuna.Text = fechaProxima?.ToString("yyyy-MM-dd") ?? "No disponible";
+                        MessageBox.Show($"La fecha próxima para la mascota seleccionada es: {fechaProxima:yyyy-MM-dd}");
                     }
                     else
                     {
-                        txtVacuna.Text = "No se encontró la mascota.";
+                        MessageBox.Show("No se encontraron registros de vacunas para esta mascota.");
                     }
                 }
             }
         }
 
+
+
+        private void RefreshDataGridView()
+        {
+            using (var db = new PetAppContext())
+            {
+                var mascotas = db.Mascota
+                    .Select(m => new
+                    {
+                        m.IdMascota,
+                        m.Alias,
+                        
+                    })
+                    .ToList();
+
+                Data.DataSource = mascotas;
+            }
+        }
+
+
+
+        private void Data_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            if (Data.SelectedRows.Count > 0)
+            {
+                string valorCelda = Data.SelectedRows[0].Cells[Data.CurrentCell.ColumnIndex].Value.ToString();
+                txtDatos.Text = valorCelda;
+                Datos = Data.Columns[Data.CurrentCell.ColumnIndex].Name;
+            }
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmReporte_Load(object sender, EventArgs e)
+        {
+            // Cargar todos los datos de mascotas al inicio
+            RefreshDataGridView();
         }
     }
 }

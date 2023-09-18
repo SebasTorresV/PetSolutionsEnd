@@ -176,5 +176,10 @@ namespace PetApp
             this.Close();
 
         }
+
+        private void Data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

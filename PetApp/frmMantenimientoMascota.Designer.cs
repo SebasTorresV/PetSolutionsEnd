@@ -122,6 +122,7 @@
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Data.Size = new System.Drawing.Size(443, 144);
             this.Data.TabIndex = 0;
+            this.Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_CellContentClick);
             this.Data.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Data_MouseDoubleClick);
             // 
             // frmMantenimientoMascota

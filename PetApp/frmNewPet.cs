@@ -68,7 +68,7 @@ namespace PetApp
                     db.ClientesxMascotas.Add(relacionClienteMascota);
                     db.SaveChanges();
 
-                    MessageBox.Show("Nueva mascota registrada exitosamente y relación cliente-mascota guardada.");
+                    MessageBox.Show("Nueva mascota registrada exitosamente.");
                 }
                 else
                 {
