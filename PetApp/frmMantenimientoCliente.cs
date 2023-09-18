@@ -26,22 +26,8 @@ namespace PetApp
 
         private void frmManteniminetoCliente_Load(object sender, EventArgs e)
         {
-            using (var db = new PetAppContext())
-            {
-                // Consulta los datos incluyendo la columna IdCliente
-                var clientes = db.Cliente
-                    .Select(c => new
-                    {
-                        c.IdCliente,
-                        c.NombreCompleto,
-                        c.Telefono,
-                        c.Email
-                    })
-                    .Where(X => X.NombreCompleto.Contains(txtEdit.Text))
-                    .ToList();
-
-                Data.DataSource = clientes;
-            }
+            // Cargar todos los datos al inicio
+            RefreshDataGridView();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -87,8 +73,11 @@ namespace PetApp
                         db.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
 
-                        Data.DataSource = db.Cliente.ToList();
+                        // Limpiar el TextBox
                         txtEdit.Text = string.Empty;
+
+                        // Actualizar el DataGridView con todos los datos
+                        RefreshDataGridView();
                     }
                     else
                     {
@@ -105,6 +94,59 @@ namespace PetApp
         private void Salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Data.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este registro?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    using (var db = new PetAppContext())
+                    {
+                        int idCliente = Convert.ToInt32(Data.SelectedRows[0].Cells["IdCliente"].Value);
+                        var cliente = db.Cliente.Find(idCliente);
+
+                        if (cliente != null)
+                        {
+                            db.Cliente.Remove(cliente);
+                            db.SaveChanges();
+
+                            // Actualizar el DataGridView después de eliminar
+                            RefreshDataGridView();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el cliente en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila en el DataGridView antes de eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshDataGridView()
+        {
+            using (var db = new PetAppContext())
+            {
+                // Consulta los datos incluyendo la columna IdCliente
+                var clientes = db.Cliente
+                    .Select(c => new
+                    {
+                        c.IdCliente,
+                        c.NombreCompleto,
+                        c.Telefono,
+                        c.Email
+                    })
+                    .ToList();
+
+                Data.DataSource = clientes;
+            }
         }
     }
 }

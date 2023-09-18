@@ -81,7 +81,7 @@ namespace PetApp
                 "Una aplicación para gestionar mascotas y clientes.\n" +
                 "Desarrollado por Benjamin Sebastian Torres Gonzalez.\n\n" +
                 "Alias: Ajolote \n\n" +
-                "Dudede de mi conocimento por un momento, pero la IA me salvó jsjsjs \n\n" +
+                "Dudé de mi conocimento por un momento, pero la IA me salvó jsjsjs, Sí, usé ChatGPT \n\n" +
                 "Contacto: 202102202@gmail.com";
             
             MessageBox.Show(mensaje, "Acerca de PetApp", MessageBoxButtons.OK, MessageBoxIcon.Information);

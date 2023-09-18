@@ -47,11 +47,13 @@
             this.Data.AllowUserToDeleteRows = false;
             this.Data.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Data.Location = new System.Drawing.Point(3, 16);
+            this.Data.Location = new System.Drawing.Point(4, 20);
+            this.Data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
+            this.Data.RowHeadersWidth = 51;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(414, 144);
+            this.Data.Size = new System.Drawing.Size(552, 177);
             this.Data.TabIndex = 0;
             this.Data.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.grdData_MouseDoubleClick);
             // 
@@ -60,16 +62,19 @@
             this.groupBox1.Controls.Add(this.Data);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 166);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(560, 204);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(286, 68);
+            this.btnActualizar.Location = new System.Drawing.Point(381, 84);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 0;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -77,18 +82,21 @@
             // 
             // txtEdit
             // 
-            this.txtEdit.Location = new System.Drawing.Point(7, 68);
+            this.txtEdit.Location = new System.Drawing.Point(9, 84);
+            this.txtEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEdit.Name = "txtEdit";
-            this.txtEdit.Size = new System.Drawing.Size(261, 20);
+            this.txtEdit.Size = new System.Drawing.Size(347, 22);
             this.txtEdit.TabIndex = 1;
             // 
             // grpEdit
             // 
             this.grpEdit.Controls.Add(this.txtEdit);
             this.grpEdit.Controls.Add(this.btnActualizar);
-            this.grpEdit.Location = new System.Drawing.Point(2, 207);
+            this.grpEdit.Location = new System.Drawing.Point(3, 255);
+            this.grpEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpEdit.Name = "grpEdit";
-            this.grpEdit.Size = new System.Drawing.Size(415, 129);
+            this.grpEdit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpEdit.Size = new System.Drawing.Size(553, 159);
             this.grpEdit.TabIndex = 5;
             this.grpEdit.TabStop = false;
             this.grpEdit.Text = "Edicion";
@@ -96,9 +104,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(2, 173);
+            this.btnEditar.Location = new System.Drawing.Point(3, 213);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(100, 28);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -106,18 +115,21 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(83, 172);
+            this.btnEliminar.Location = new System.Drawing.Point(111, 212);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Salir
             // 
-            this.Salir.Location = new System.Drawing.Point(200, 171);
+            this.Salir.Location = new System.Drawing.Point(267, 210);
+            this.Salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(75, 23);
+            this.Salir.Size = new System.Drawing.Size(100, 28);
             this.Salir.TabIndex = 8;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = true;
@@ -125,14 +137,15 @@
             // 
             // frmMantenimientoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 338);
+            this.ClientSize = new System.Drawing.Size(560, 416);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.grpEdit);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMantenimientoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimineto de Cliente";
