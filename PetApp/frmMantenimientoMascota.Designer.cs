@@ -136,7 +136,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmMantenimientoMascota";
             this.Text = "frmMantenimientoMascota";
-            this.Load += new System.EventHandler(this.frmMantenimientoMascota_Load);
+            this.Load += new System.EventHandler(this.frmManteniminetoMascota_Load);
             this.grpEdit.ResumeLayout(false);
             this.grpEdit.PerformLayout();
             this.groupBox1.ResumeLayout(false);
