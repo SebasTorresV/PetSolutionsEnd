@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.gpbReporte = new System.Windows.Forms.GroupBox();
+            this.txtDatos = new System.Windows.Forms.TextBox();
+            this.Data = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Data = new System.Windows.Forms.DataGridView();
-            this.txtDatos = new System.Windows.Forms.TextBox();
             this.gpbReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             this.SuspendLayout();
@@ -50,25 +50,12 @@
             this.gpbReporte.TabStop = false;
             this.gpbReporte.Text = "Reporte";
             // 
-            // button2
+            // txtDatos
             // 
-            this.button2.Location = new System.Drawing.Point(343, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(343, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 21);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar  mascota";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtDatos.Location = new System.Drawing.Point(6, 57);
+            this.txtDatos.Name = "txtDatos";
+            this.txtDatos.Size = new System.Drawing.Size(244, 20);
+            this.txtDatos.TabIndex = 1;
             // 
             // Data
             // 
@@ -80,16 +67,29 @@
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(321, 138);
+            this.Data.Size = new System.Drawing.Size(244, 138);
             this.Data.TabIndex = 7;
             this.Data.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Data_MouseDoubleClick);
             // 
-            // txtDatos
+            // button2
             // 
-            this.txtDatos.Location = new System.Drawing.Point(6, 57);
-            this.txtDatos.Name = "txtDatos";
-            this.txtDatos.Size = new System.Drawing.Size(321, 20);
-            this.txtDatos.TabIndex = 1;
+            this.button2.Location = new System.Drawing.Point(283, 108);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Salir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(283, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 21);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Buscar  mascota";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmReporte
             // 

@@ -23,10 +23,8 @@ namespace PetApp
         {
             if (Data.SelectedRows.Count > 0)
             {
-                // Obtén el IdMascota seleccionado en el DataGridView
                 int idMascotaSeleccionado = (int)Data.SelectedRows[0].Cells["IdMascota"].Value;
 
-                // Realiza la búsqueda en la tabla Vacunas usando el IdMascota
                 using (var db = new PetAppContext())
                 {
                     var fechaProxima = db.Vacunas
@@ -37,7 +35,8 @@ namespace PetApp
 
                     if (fechaProxima != null)
                     {
-                        MessageBox.Show($"La fecha próxima para la mascota seleccionada es: {fechaProxima:yyyy-MM-dd}");
+                        string fechaLarga = fechaProxima.Value.ToLongDateString();
+                        MessageBox.Show($"La Fecha para la otra vacuna es: {fechaLarga}");
                     }
                     else
                     {
